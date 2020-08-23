@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="bsnl" class="com.networks.in.Bsnl"></bean>
+	<bean id="idea" class="com.networks.in.Idea"></bean>
+	<bean id="jio" class="com.networks.in.Jio"></bean>
+
+	  <bean id="samsung" class="com.networks.in.Samsung">
+		<constructor-arg name="network" ref="jio"></constructor-arg>
+	</bean> 
+	
+	  <bean id="apple" class="com.networks.in.Apple11Max">
+	<property name="NetworkApi" ref="bsnl"/> </bean>
+</beans>
